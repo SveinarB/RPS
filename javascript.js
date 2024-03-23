@@ -8,29 +8,31 @@ const playerWin = "Good job, you won!"
 function getComputerChoice() {
     let computerChoice = Math.floor(Math.random()* 3) + 1;
     if(computerChoice === 1) {
-        computerChoice = rock;
+        return rock;
     } else if(computerChoice === 2) {
-        computerChoice = paper;
+        return paper;
     } else {
-        computerChoice = scissors;
+        return scissors;
     }
-    console.log(computerChoice);
 }
+
+console.log(getComputerChoice());
 
 function playRound(playerSelection, computerSelection) {
     if(computerSelection === playerSelection) {
-        tie;
+        return tie;
     } else if(
     (computerSelection === rock && playerSelection === scissors) ||
     (computerSelection === paper && playerSelection === rock) ||
     (computerSelection === scissors && playerSelection === paper)) {
-        computerWin;
+        return computerWin;
     } else {
-        playerWin;
+        return playerWin;
     }
 }
 
 
-const playerSelection = rock;
+
+const playerSelection = "rock";
 const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
